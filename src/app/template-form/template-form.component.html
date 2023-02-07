@@ -1,0 +1,26 @@
+<form class="row g-3 needs-validation" novalidate [formGroup]="form" (ngForm)="onSubmit()">
+  <div class="form-group">
+    <div class="mb-3">
+      <label for="validationCustom01" class="form-label">Nome:</label>
+      <input type="text" class="form-control" id="nome" placeholder="nome" class="form-control" formControlName="nome">
+      <div *ngIf="form.get('nome')?.errors?.['required'] && form.get('nome')?.touched">
+        <div class="alert alert-danger" role="alert">
+          Nome obrigatório!
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email:</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="nome@email.com"
+          aria-describedby="emailHelp" formControlName="email" required email>
+        <div *ngIf="form.get('email')?.errors?.['required'] && form.get('email')?.touched">
+          <div class="alert alert-danger" role="alert">
+            Email obrigatório!
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit form</button>
+      </div>
+    </div>
+  </div>
+</form>
