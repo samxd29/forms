@@ -10,7 +10,7 @@ import { TemplateFormComponent } from './template-form.component';
 @NgModule({
   declarations: [
     TemplateFormComponent,
-    FormDebugComponent
+    FormDebugComponent,
   ],
   imports: [
     CommonModule,
