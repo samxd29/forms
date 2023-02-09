@@ -35,7 +35,8 @@
       <div class="row">
         <div class="col-sm-3">
           <label for="cep" class="control-label">CEP:</label>
-          <input type="text" class="form-control" placeholder="CEP" id="cep" formControlName="cep" required>
+          <input type="text" class="form-control" placeholder="CEP" id="cep" formControlName="cep"
+            (blur)="consultaCEP($event.target)" required>
           <div *ngIf="form.get('cep')?.errors?.['required'] && form.get('cep')?.touched">
             <div class="alert alert-danger" role="alert">
               CEP é obrigatório!
@@ -109,8 +110,6 @@
 
       </div>
     </div>
-
-
   </div>
 
   <div class="col-12">
